@@ -22,7 +22,7 @@ module.exports = {
       {
         test: [/\.stories\.js$/, /index\.js$/],
         loaders: [require.resolve('@storybook/addon-storysource/loader')],
-        include: [resolve('stories')],
+        include: [resolve('components')],
         enforce: 'pre'
       }
     ]
