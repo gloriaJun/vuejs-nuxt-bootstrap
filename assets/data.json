@@ -1,0 +1,17 @@
+{
+  "vas": {
+    "meta": {
+      "title": "Test APP",
+      "favicon": "/favicon_vas.ico"
+    },
+    "navbar": {
+      "brandLogo": {
+        "src": "/vas_m.png",
+        "alt": "vas"
+      },
+      "brandName": "객체인식 서비스",
+      "brandNameText": "Recognition Service"
+    }
+
+  }
+}

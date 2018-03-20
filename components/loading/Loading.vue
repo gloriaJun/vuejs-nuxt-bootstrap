@@ -1,6 +1,12 @@
 <template>
-  <div class="loading-page" v-if="loading">
-    <p>Loading...</p>
+  <div
+    v-if="loading"
+    class="loading-page">
+    <p>Loading...
+      <font-awesome-icon
+        icon="spinner"
+        spin />
+    </p>
   </div>
 </template>
 
@@ -14,7 +20,7 @@ export default {
   },
   methods: {
     start () {
-     this.loading = true
+      this.loading = true
     },
     finish () {
       this.loading = false

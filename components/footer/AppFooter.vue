@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="container-fluid p-md-3">
-      <span class="text-muted">COPYRIGHTⓒ2018 BY SK HOLDINGS CO., LTD. ALL RIGHTS RESERVED</span>
+      <span class="text-muted">COPYRIGHTⓒ2018, LTD. ALL RIGHTS RESERVED</span>
     </div>
   </footer>
 </template>
