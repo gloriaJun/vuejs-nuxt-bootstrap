@@ -1,17 +1,20 @@
 <template>
-  <b-alert show>
-    <app-logo/>
-    Hello Bootstrap!
-    <font-awesome-icon icon="spinner" spin />
-  </b-alert>
+  <p>Header and footers using props.</p>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import contentData from '~/assets/data.json'
 
 export default {
   components: {
-    AppLogo
+  },
+  head () {
+    return {
+      title: contentData.vas.meta.title,
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon_vas.ico' }
+      ]
+    }
   }
 }
 </script>
