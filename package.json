@@ -11,7 +11,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook -s static"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.4",
