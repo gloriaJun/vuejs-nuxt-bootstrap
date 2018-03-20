@@ -14,8 +14,10 @@
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-solid": "^5.0.8",
+    "@fortawesome/vue-fontawesome": "0.0.22",
     "bootstrap-vue": "^2.0.0-rc.2",
-    "font-awesome": "^4.7.0",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {

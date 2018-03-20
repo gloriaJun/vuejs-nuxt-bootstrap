@@ -13,7 +13,10 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  plugins: ['~/plugins/plugins.js'],
+  plugins: [
+    '~/plugins/bootstrap-vue.js',
+    '~/plugins/font-awesome.js'
+  ],
   css: [
     '~/assets/style/app.scss'
   ],
@@ -26,7 +29,7 @@ module.exports = {
   */
   build: {
     vendor: [
-      '~/plugins/plugins.js'
+      '~/plugins/bootstrap-vue.js'
     ],
     extractCSS: true,
     /*
