@@ -7,10 +7,9 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'API Gateway Demo Servcie of SK Vision AI' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   plugins: [
@@ -26,6 +25,11 @@ module.exports = {
   loading: {
     loading: '~/components/loading/loading.vue'
   },
+  modules: [
+    'bootstrap-vue/nuxt',
+    // Or if you have custom bootstrap CSS...
+    ['bootstrap-vue/nuxt', { css: false }],
+  ],
   /*
   ** Build configuration
   */
