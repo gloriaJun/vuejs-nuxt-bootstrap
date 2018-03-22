@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <app-nav-bar
-      :brand-logo-image="{src: '/vas_m.png'}"
-      :brand-name="'VAS'"/>
+      :brand-logo-image="{src: '/logo.png'}"
+      :brand-name="$t('brandName')"/>
     <b-container fluid>
       <nuxt/>
     </b-container>
@@ -27,5 +27,5 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 </style>

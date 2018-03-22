@@ -23,7 +23,7 @@ addDecorator(vueInfoAddon)
 addDecorator(withKnobs)
 
 function loadStories() {
-  const req = require.context('../components/', true, /\.stories\.js$/)
+  const req = require.context('../src/components/', true, /\.stories\.js$/)
   req.keys().forEach((filename) => req(filename))
 }
 

@@ -7,7 +7,7 @@
         v-show="brandLogoImage.src"
         :src="brandLogoImage.src"
         :alt="brandLogoImage.alt"
-        class="d-inline-block align-top">
+        class="d-inline-block align-middle">
       {{ brandName }}
     </b-navbar-brand>
     <b-collapse
@@ -41,8 +41,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.navbar-brand > img{
-  width: 20%;
-  height: 20%;
+.navbar {
+  height: 3.5rem;
+  .navbar-brand {
+    img {
+      width: 3rem;
+      height: 2.5rem;
+    }
+  }
 }
 </style>

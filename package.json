@@ -5,20 +5,23 @@
   "author": "gloriaJun <pureainu@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "sh replace.sh && nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "storybook": "start-storybook -p 9001 -c .storybook -s static"
+    "storybook": "start-storybook -p 9001 -c .storybook -s src/static"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.4",
     "@fortawesome/fontawesome-free-solid": "^5.0.8",
     "@fortawesome/vue-fontawesome": "0.0.22",
     "bootstrap-vue": "^2.0.0-rc.2",
-    "nuxt": "^1.0.0"
+    "lodash": "^4.17.5",
+    "nuxt": "^1.0.0",
+    "vue-i18n": "^7.6.0",
+    "vue-lodash": "^1.0.4"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.15",

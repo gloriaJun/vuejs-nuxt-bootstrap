@@ -1,23 +1,30 @@
+const resolve = (dir) => require('path').join(__dirname, dir)
+
 module.exports = {
   /*
   ** Headers of the page
   */
   head: {
-    title: 'webapp',
+    title: 'vuejs',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'API Gateway Demo Servcie of SK Vision AI' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui' },
+      { hid: 'description', name: 'description', content: 'VueJS Prototype with Nuxt' }
     ],
     link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  srcDir: resolve('src/'),
   plugins: [
     '~/plugins/bootstrap-vue.js',
-    '~/plugins/font-awesome.js'
+    '~/plugins/font-awesome.js',
+    '~/plugins/i18n.js',
+    '~/plugins/lodash.js'
   ],
   css: [
-    '~/assets/style/app.scss'
+    {src: '~/assets/style/app.scss', lang: 'scss'},
+    {src: 'bootstrap-vue/dist/bootstrap-vue.css', lang: 'css'}
   ],
   /*
   ** Customize the progress bar color
@@ -26,9 +33,6 @@ module.exports = {
     loading: '~/components/loading/loading.vue'
   },
   modules: [
-    'bootstrap-vue/nuxt',
-    // Or if you have custom bootstrap CSS...
-    ['bootstrap-vue/nuxt', { css: false }],
   ],
   /*
   ** Build configuration
