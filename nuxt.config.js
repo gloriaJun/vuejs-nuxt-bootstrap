@@ -1,52 +1,62 @@
-const resolve = (dir) => require('path').join(__dirname, dir)
 
 module.exports = {
+  srcDir: 'src/',
   /*
   ** Headers of the page
   */
   head: {
-    title: 'vuejs',
+    title: 'frs-web',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui' },
-      { hid: 'description', name: 'description', content: 'VueJS Prototype with Nuxt' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Nuxt.js + Vuetify.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' }
     ]
   },
-  srcDir: resolve('src/'),
   plugins: [
-    '~/plugins/bootstrap-vue.js',
-    '~/plugins/font-awesome.js',
-    '~/plugins/i18n.js',
-    '~/plugins/lodash.js'
+    '@/plugins/i18n.js',
+    '@/plugins/lodash.js',
+    '@/plugins/moment.js',
+    { src: '@plugins/element-ui', ssr: true },
+    { src: '@plugins/global-component', ssr: true }
   ],
+  /*
+  ** Global CSS
+  */
   css: [
-    {src: '~/assets/style/app.scss', lang: 'scss'},
-    {src: 'bootstrap-vue/dist/bootstrap-vue.css', lang: 'css'}
+    '@/assets/style/app.scss'
   ],
   /*
   ** Customize the progress bar color
   */
-  loading: {
-    loading: '~/components/loading/loading.vue'
+  loading: { color: '#3B8070' },
+  /*
+  ** Router configuration
+  */
+  router: {
+    middleware: 'i18n'
   },
-  modules: [
-  ],
   /*
   ** Build configuration
   */
   build: {
     vendor: [
-      '~/plugins/bootstrap-vue.js'
+      // 'babel-polyfill',
+      'axios',
+      'vue-i18n',
+      'vue-lodash',
+      'vue-moment',
+      'element-ui'
     ],
     extractCSS: true,
     /*
     ** Run ESLint on save
     */
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
+    extend (config, ctx) {
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

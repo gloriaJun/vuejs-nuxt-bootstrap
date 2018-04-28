@@ -3,10 +3,12 @@
 module.exports = {
   root: true,
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
+    sourceType: 'module'
   },
   env: {
-    browser: true,
+    node: true,
+    browser: true
   },
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
@@ -21,8 +23,17 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    // off
-    'vue/html-self-closing': 'off',
+    // for vue
+    "vue/html-self-closing": ["error", {
+      "html": {
+        "void": "never",
+        "normal": "never",
+        "component": "never"
+      },
+      "svg": "always",
+      "math": "always"
+    }],
+    "vue/require-default-prop": 'off',
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development

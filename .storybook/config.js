@@ -3,14 +3,13 @@ import { configure, addDecorator } from '@storybook/vue';
 // addons
 import { withKnobs } from '@storybook/addon-knobs/vue';
 import { setConsoleOptions } from '@storybook/addon-console'
-import vueInfoAddon from "storybook-addon-vue-info/lib/index"
 
-import Vue from 'vue'
-import BootstrapVue from 'bootstrap-vue'
-Vue.use(BootstrapVue)
-
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+/**
+ * import plugins
+ */
+import '../src/plugins/element-ui'
+// global components
+import '../src/plugins/global-component'
 
 // for redirect console log
 const panelExclude = setConsoleOptions({}).panelExclude;
@@ -19,7 +18,6 @@ setConsoleOptions({
 });
 
 // add decorator
-addDecorator(vueInfoAddon)
 addDecorator(withKnobs)
 
 function loadStories() {
