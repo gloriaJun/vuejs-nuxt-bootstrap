@@ -17,7 +17,8 @@
     "generate": "nuxt generate",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "storybook:build": "build-storybook -c .storybook -o .out",
-    "clean": "rimraf .nuxt && rimraf dist && rimraf .out"
+    "clean": "rimraf .nuxt && rimraf dist && rimraf .out",
+    "deploy": "gh-pages -d .out"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -48,6 +49,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^4.5.0",
+    "gh-pages": "^1.1.0",
     "node-sass": "^4.8.3",
     "sass-loader": "^7.0.1"
   }

@@ -1,6 +1,9 @@
 # vuejs-nuxt-element
 vuejs base on nuxt with element-ui
 
+## Static Site
+https://gloriajun.github.io/vuejs-nuxt-element/
+
 ## Build Setup
 ``` bash
 # install dependencies
