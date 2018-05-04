@@ -3,17 +3,24 @@
  */
 export default {
   live: {
-    title: 'Board',
-    icon: 'list',
-    path: '/board',
+    title: 'Live',
+    icon: 'live_tv',
+    path: '/live',
     items: {
       detection: {
-        title: 'User',
-        path: '/user'
-      },
-      result: {
-        title: 'books',
-        path: '/books'
+        title: 'Detection',
+        path: '/detection'
+      }
+    }
+  },
+  ondemand: {
+    title: 'On-Demand',
+    icon: 'ondemand_video',
+    path: '/ondemand',
+    items: {
+      analysis: {
+        title: 'Analysis',
+        path: '/analysis'
       }
     }
   },
