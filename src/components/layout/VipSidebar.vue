@@ -1,6 +1,9 @@
 <template>
-  <el-aside class="vip-sidebar">
+  <el-aside
+    :class="{sidebarCollapse: isCollapse}"
+    class="vip-sidebar">
     <el-menu
+      :collapse="isCollapse"
       mode="vertical"
       @select="onSelectItem">
       <template v-for="(menu, key) in menus">
@@ -16,8 +19,8 @@
           </template>
           <el-menu-item
             v-for="(subMenu, subKey) in menu.items"
-            :key="subKey"
-            :index="subMenu.path">
+            :key="key + '.' + subKey"
+            :index="menu.path + '/' + subMenu.path">
             {{ subMenu.title }}
           </el-menu-item>
         </el-submenu>
@@ -42,18 +45,29 @@ export default {
   props: {
     menus: {
       type: [Array, Object]
+    },
+    isCollapse: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
     onSelectItem (key, keyPath) {
-      this.$emit('select', keyPath.join(''))
+      this.$emit('select', key.replace(/\/{2,}/g, '/').replace(/\/$/, ''), keyPath)
     }
   }
 }
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-.vip-sidebar, .el-menu {
-  height: 100%;
-}
+  $collapse-width: 64px;
+  .vip-sidebar, .el-menu {
+    height: 100%;
+  }
+  .sidebarCollapse {
+    width: $collapse-width + 1 !important;
+  }
+  .el-menu--collapse {
+    width: $collapse-width !important;
+  }
 </style>
