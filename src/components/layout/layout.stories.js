@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/vue'
 import {
   VipHeader,
   VipSidebar,
-  VipFooter
+  VipFooter,
+  VipBreadcrumb
 } from './index'
 
 const languages = {
@@ -92,5 +93,16 @@ storiesOf('Layout', module)
         }
       },
       template: `<vip-footer :copyright="copyright"></vip-footer>`
+    })
+  })
+  .add('breadcrumb', () => {
+    return ({
+      components: { VipBreadcrumb },
+      data () {
+        return {
+          itemList: { live: { title: 'Live', path: '/' }, detection: { title: 'Detection' } }
+        }
+      },
+      template: `<vip-breadcrumb :item-list="itemList"></vip-breadcrumb>`
     })
   })

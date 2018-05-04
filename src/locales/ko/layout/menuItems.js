@@ -3,15 +3,15 @@
  */
 export default {
   live: {
-    title: '게시판',
+    title: '실시간 안면 인식',
     items: {
       detection: {
-        title: '사용자'
-      },
-      result: {
-        title: '책'
+        title: '안면 인식 검출'
       }
     }
+  },
+  ondemand: {
+    title: 'Investigation'
   },
   setting: {
     title: '설정'

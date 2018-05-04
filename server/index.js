@@ -1,4 +1,5 @@
 import express from 'express'
+import cookieParser from 'cookie-parser'
 import { Nuxt, Builder } from 'nuxt'
 
 import api from './api/index'
@@ -9,6 +10,7 @@ const port = process.env.PORT || 3000
 
 app.set('port', port)
 
+app.use(cookieParser())
 // Import API Routes
 app.use('/api', api)
 

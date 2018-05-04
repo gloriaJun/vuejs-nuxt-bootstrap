@@ -15,26 +15,41 @@ html, body, #__nuxt, #__layout, #app {
   width: 100%;
 }
 
-#header {
-  position: fixed;
-  width: 100%;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  height: $header-height !important;
-  &, * {
-    background-color: $bg-header-color;
+#app {
+  #header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: $header-height !important;
+    &, * {
+      background-color: $bg-header-color;
+    }
   }
-}
 
-#sidebar {
-  width: 220px !important;
-  .vip-icon {
-    padding-right: .3rem;
+  #container {
+    height: 100%;
+    padding-top: $header-height;
+
+    #sidebar {
+      &:not(.sidebarCollapse) {
+        width: 220px !important;
+      }
+    }
+
+    #main {
+      padding: 0;
+      .vip-breadcrumb {
+        width: 100%;
+        padding: 0 20px;
+        line-height: 40px;
+        border-bottom: 1px solid #d8dce5;
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,.12),0 0 3px 0 rgba(0,0,0,.04);
+      }
+      .content {
+        padding: 20px;
+      }
+    }
   }
-}
-
-#container {
-  height: 100%;
-  padding-top: $header-height;
 }
