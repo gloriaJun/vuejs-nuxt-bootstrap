@@ -22,6 +22,10 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss" scoped>
 .vip-icon {
-  font-size: inherit;
+  vertical-align: middle;
+  margin-right: .3rem;
+  width: 24px;
+  text-align: center;
+  font-size: 1.2rem;
 }
 </style>
